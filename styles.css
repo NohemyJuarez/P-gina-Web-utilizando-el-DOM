@@ -1,0 +1,284 @@
+/* Importando fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;500&display=swap');
+
+/* Estilos globales y de reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header y navegación principal */
+header {
+    background-color: #6a1b9a;
+    padding: 2vh;
+}
+
+header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1vh;
+}
+
+nav ul li a {
+    color: #9f9b9b;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f5a623;
+}
+
+/* Sección de introducción (Inicio) */
+.intro {
+    /* Imagen de fondo para la sección de inicio */
+    background-image: url('fondo_2.jpg');
+    background-size: cover;
+    padding: 15vh 2vw;
+}
+
+.intro h2 {
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.intro p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    margin: 5vh 2vw;
+}
+
+/* Tarjetas de contenido (cards) */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.card {
+    background-color: #6310b0;
+    border-radius: 1rem;
+    padding: 2vh;
+    width: 20vw;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-info, .btn-eliminar {
+    margin-top: 1vh;
+    background-color: #1297cc;
+    color: #fff;
+    border: none;
+    padding: 1vh 2vw;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-info:hover, .btn-eliminar:hover {
+    background-color: #9c27b0;
+}
+
+/* Botón para cambiar de tema */
+#btn-cambiar-tema {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background-color: #e909ed;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btn-cambiar-tema:hover {
+    background-color: #e64a19;
+}
+
+/* Estilos del modal para mostrar más información */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 50%;
+    color: #000;
+    text-align: left;
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Sección Foro de Discusión */
+.foro {
+    background-color: #470b95;
+    padding: 5vh 2vw;
+    text-align: center;
+}
+
+.foro h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2vh;
+}
+
+.foro p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Sección Contacto con imagen de fondo */
+.contacto {
+    background-image: url('fondo_1.jpg'); /* Imagen de fondo de la sección de contacto */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 5vh 2vw;
+    text-align: center;
+    position: relative;
+}
+
+.contacto::before {
+    /* Fondo semitransparente para mejorar la legibilidad del texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+     /* Fondo  con opacidad */
+    z-index: 1;
+}
+
+.contacto h2, .contacto p, .contacto form {
+    position: relative;
+    z-index: 2; /* Asegurar que el contenido esté por encima del fondo */
+}
+
+.contacto h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2vh;
+}
+
+.contacto p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto input, .contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+}
+
+.contacto button {
+    background-color: #5630a3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contacto button:hover {
+    background-color: #422086;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .intro h2 {
+        font-size: 2.2rem;
+    }
+
+    .intro p {
+        font-size: 1.2rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 4vh;
+    }
+
+    .card {
+        width: 80vw;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .foro h2, .contacto h2 {
+        font-size: 2rem;
+    }
+
+    #btn-cambiar-tema {
+        top: 1rem;
+        right: 1rem;
+    }
+}
